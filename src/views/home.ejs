@@ -3,5 +3,9 @@
 <div class="md:flex bg-white p-6">
     <h3>Linktree</h3>
 </div>
-
+<div>
+    <% socials.forEach(function(social){ %>
+        <a href="<%- social.url %>"><%- social.name %></a>
+    <% }); %>
+</div>
 <%- include('partials/footer'); %>
