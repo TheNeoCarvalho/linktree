@@ -16,6 +16,10 @@ module.exports = {
        url: {
         type: Sequelize.STRING,
         allowNull: false,
+      },       
+      profile: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
       },
       created_at: {
         type: Sequelize.DATE,

@@ -3,6 +3,7 @@
 <div>
     <h1>Form</h1>
     <form action="/add" method="POST">
+        <input type="hidden" name="user" value="<%= user %>">
         <input type="text" name="name">
         <input type="text" name="url">
         <button type="submit">Salvar</button>
