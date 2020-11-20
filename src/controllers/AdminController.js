@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-const fileUpload = require('express-fileupload');
 
 const Social = require("../models/Social");
 const User = require("../models/User");
@@ -10,22 +9,12 @@ module.exports = {
     },
 
     async home(req, res) {
-        const user = req.session.email;
-        const loggedin = req.session.loggedin
-
-        if (loggedin) {
-            res.render( "admin/home", { user });
-        } else {
-            res.redirect('login');
-        }
+            res.render( "admin/home");
     },
     async login(req, res){
        const {email, password} = req.body;
 
-        // const salt = bcrypt.genSaltSync(10);
-        // const hash = bcrypt.hashSync(password, salt);
-
-       if (email && password) {
+        if (email && password) {
             const users = await User.findOne({
                 where: {
                     email
@@ -42,7 +31,7 @@ module.exports = {
             }else {
                 res.redirect('/admin/login');
             }
-         }
+        }
     },
     async register(req, res){
         return res.render("admin/register");

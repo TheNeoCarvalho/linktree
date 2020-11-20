@@ -7,7 +7,6 @@ const morgan = require("morgan");
 
 require("./database");
 
-app.use(fileUpload());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false})); 
 app.use(express.json());
