@@ -8,7 +8,6 @@ const middlewareAuth = (req, res, next) => {
     } else {
         res.redirect('login');
     }
-    
 }
 
 const routes = express.Router();
@@ -18,9 +17,9 @@ routes.get("/:profile", SocialController.showUser);
 routes.get("/add", SocialController.show);
 routes.post("/add", SocialController.store);
 
-
 routes.get('/admin/home', middlewareAuth, AdminController.home);
 routes.get("/admin/login", AdminController.index);
+routes.post("/admin/social", middlewareAuth, AdminController.createSocial);
 routes.post('/admin/auth', AdminController.login);
 routes.get('/admin/register', AdminController.register);
 routes.post('/admin/register', AdminController.ActionRegister);

@@ -9,7 +9,7 @@ module.exports = {
     },
 
     async home(req, res) {
-            res.render( "admin/home");
+        res.render( "admin/home");
     },
     async login(req, res){
        const {email, password} = req.body;
@@ -29,7 +29,7 @@ module.exports = {
                 req.session.id = users.id;
                 res.redirect('/admin/home');
             }else {
-                res.redirect('/admin/login');
+                res.redirect('admin/login');
             }
         }
     },
@@ -49,7 +49,21 @@ module.exports = {
             email, 
             password: hash
         })
-        return res.redirect("admin/login");
+        return res.redirect("login");
+    },
+    async createSocial(req, res){
+        const { social, url } = req.body;
+        const user = await User.findOne({
+            where: {
+                email: req.session.email
+            }
+        });
+        await Social.create({
+            name: social,
+            url,
+            profile: user.id
+        })
+        return res.redirect("/admin/home");
     }
     
 }

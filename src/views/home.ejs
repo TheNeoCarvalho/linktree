@@ -1,9 +1,14 @@
 <%- include('partials/header'); %>
 <div>
+    <div class="box bg-gray-100 rounded-full flex items-center justify-center mb-5 mt-5 shadow-lg hover:bg-gray-400 hover:border-2">
+        <img src="https://profissaopilates.com.br/wp-content/uploads/2019/03/avatar-icon.png" alt="">
+    </div>
+    <h2 class="text-purple-700 flex items-center justify-center mb-5 mt-5">@<%- profile%></h2>
     <% socials.forEach((social) => { %>
         <ul>
-            <li><a class="flex justify-center rounded-md" href="<%- social.url %>"><%- social.name %></a></li>
+            <li class="bg-gray-400 rounded-3xl flex items-center justify-center rounded-md hover:bg-purple-700 hover:text-gray-100"><a href="<%- social.url %>"><%- social.name %></a></li>
         </ul>
     <% }); %>
+
 </div>
 <%- include('partials/footer'); %>

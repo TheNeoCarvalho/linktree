@@ -3,8 +3,7 @@ const User = require("../models/User");
 
 module.exports = {
     async index(req, res){
-        const socials = await Social.findAll();
-        res.render("home", { socials });
+        res.send("Linktree");
     },
     async show(req, res){
         res.render("form");
@@ -22,7 +21,7 @@ module.exports = {
                 profile: userProfile.id
             }
         });
-        res.render("home", { socials });
+        res.render("home", { socials, profile });
     },
     async store(req, res){
         const { name, url } = req.body;

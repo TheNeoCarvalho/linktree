@@ -3,7 +3,7 @@ module.exports = {
     host: "localhost",
     username: "root",
     password: "",
-    database: "linktree",
+    database: "nodetree",
     dialect: "mysql",
     define: {
         timestamps: true,

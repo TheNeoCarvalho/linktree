@@ -1,5 +1,34 @@
 <%- include('../partials/header'); %>
 
 <h1 class="flex justify-center text-lg">Home</h1>
+<%- include('../partials/header'); %>
+<form action="/admin/social" method="POST">
+    <div class="bg-grey-lighter h-screen font-sans">
+        <div class="container mx-auto h-full flex justify-center items-center">
+        <div class="w-1/3">
+            <h1 class="font-hairline mb-6 text-center text-lg">Redes Socials</h1>
+            <div class="border-teal p-8 border-t-12 bg-white mb-6 rounded-lg shadow-lg">
+                <div class="mb-4">
+                    <label class="font-bold text-grey-darker block mb-2">Rede Social</label>
+                    <input type="text" name="social" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow" placeholder="Seu e-mail">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="font-bold text-grey-darker block mb-2">URL</label>
+                    <input type="text" name="url" class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-2 py-2 rounded shadow" placeholder="Sua senha">
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button style="background-color: #3e3e3e;" class="text-white font-bold py-2 px-6 rounded">
+                        Criar
+                    </button> 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+<%- include('../partials/footer'); %>
 
 <%- include('../partials/footer'); %>

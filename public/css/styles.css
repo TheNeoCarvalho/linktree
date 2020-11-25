@@ -4,12 +4,23 @@
 }
 
 body {
-  background-color: #ccc;
+  background-color: rgb(245, 211, 62);
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+}
+
+h2 {
+  font-size: 28px;
+  font-weight: 700;
 }
 
 ul li {
+  max-width: 400px;
   list-style: none;
-  width: 200px;
-  background: #f00;
+  width: 60%;
+  height: 50px;
   margin: 5px auto;
 }
